@@ -23,6 +23,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 }
+
+// 수동으로 jar 작업을 구성할 필요가 없습니다. 대신 스프링 부트의 bootJar 작업을 사용해야 합니다.
