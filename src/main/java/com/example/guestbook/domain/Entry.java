@@ -14,14 +14,18 @@ public class Entry {
     private String name;  // 작성자 이름
     private String content;  // 방명록 내용
 
+    private String team; //팀
+
     public Entry() {
         // 기본 생성자
     }
 
-    public Entry(String name, String content) {
+
+    public Entry(String name, String content, String team) {
         this.name = name;
         this.content = content;
-    } // 사용자 정의 생성자
+        this.team = team;
+    } //사용자 정의 생성자
 
     public Long getId() {
         return id;
@@ -45,6 +49,14 @@ public class Entry {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 
     @Override

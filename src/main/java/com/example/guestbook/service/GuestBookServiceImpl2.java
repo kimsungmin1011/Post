@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service  // 스프링의 서비스 빈으로 등록합니다.
-public class GuestBookServiceImpl implements GuestBookService {
+public class GuestBookServiceImpl2 implements GuestBookService2 {
 
     @Autowired  // GuestBookRepository 타입의 빈을 자동으로 주입받습니다.
     private GuestBookRepository guestBookRepository;
@@ -27,18 +27,9 @@ public class GuestBookServiceImpl implements GuestBookService {
     /**
      * 전달받은 방명록 항목을 저장(추가)합니다.
      *
-     * @param entry 저장할 방명록 항목
+     * @param entry2 저장할 방명록 항목
      */
-    public void addEntry(Entry entry) {
-        guestBookRepository.save(entry);
-    }
-
-
-    public List<Entry> getTeamEntries(String teamname) {
-        System.out.println(teamname + "in getTeamEntries Impl");
-
-        System.out.println(guestBookRepository.findAllByTeam(teamname));
-
-        return guestBookRepository.findAllByTeam(teamname);
+    public void addEntry(Entry entry2) {
+        guestBookRepository.save(entry2);
     }
 }
