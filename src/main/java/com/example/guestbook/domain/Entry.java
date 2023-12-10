@@ -16,7 +16,7 @@ public class Entry {
     private String name;  // 작성자 이름
     private String content;  // 방명록 내용
     private String team;  // 팀 이름
-
+    private String recipient;  // 편지를 받을 사람
     public Entry() {
         // 기본 생성자
     }
@@ -25,6 +25,7 @@ public class Entry {
         this.name = name;
         this.content = content;
         this.team = team;
+        this.recipient = recipient;
     } // 수정된 사용자 정의 생성자
 
     // id에 대한 게터와 세터
@@ -63,6 +64,14 @@ public class Entry {
         this.team = team;
     }
 
+    // recipient에 대한 게터와 세터
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
     @Override
     public String toString() {
         return "Entry{" +
@@ -70,6 +79,7 @@ public class Entry {
                 ", name='" + name + '\'' +
                 ", content='" + content + '\'' +
                 ", team='" + team + '\'' +
+                ", recipient='" + recipient + '\'' +
                 '}';
     }
 }
