@@ -15,9 +15,6 @@ public interface GuestBookService {
      */
     List<Entry> getAllEntries();
 
-
-    List<Entry> getTeamEntries(String teamname);
-
     /**
      * 방명록에 새로운 항목을 추가합니다.
      *

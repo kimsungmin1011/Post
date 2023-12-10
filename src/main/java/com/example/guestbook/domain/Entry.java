@@ -4,29 +4,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity  // JPA의 엔터티임을 나타냅니다. 이 클래스는 데이터베이스의 테이블과 매핑됩니다.
+@Entity
+@Table(name = "test")
 public class Entry {
 
-    @Id  // 해당 필드가 테이블의 기본 키(primary key)에 매핑된다는 것을 나타냅니다.
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // 기본 키 생성을 데이터베이스에 위임함을 나타냅니다.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // 방명록 항목의 고유 ID
     private String name;  // 작성자 이름
     private String content;  // 방명록 내용
-
-    private String team; //팀
+    private String team;  // 팀 이름
 
     public Entry() {
         // 기본 생성자
     }
 
-
     public Entry(String name, String content, String team) {
         this.name = name;
         this.content = content;
         this.team = team;
-    } //사용자 정의 생성자
+    } // 수정된 사용자 정의 생성자
 
+    // id에 대한 게터와 세터
     public Long getId() {
         return id;
     }
@@ -35,6 +36,7 @@ public class Entry {
         this.id = id;
     }
 
+    // name에 대한 게터와 세터
     public String getName() {
         return name;
     }
@@ -43,6 +45,7 @@ public class Entry {
         this.name = name;
     }
 
+    // content에 대한 게터와 세터
     public String getContent() {
         return content;
     }
@@ -51,6 +54,7 @@ public class Entry {
         this.content = content;
     }
 
+    // team에 대한 게터와 세터
     public String getTeam() {
         return team;
     }
@@ -65,6 +69,7 @@ public class Entry {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", content='" + content + '\'' +
+                ", team='" + team + '\'' +
                 '}';
     }
 }
