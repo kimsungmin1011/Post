@@ -33,12 +33,12 @@ public class GuestBookServiceImpl implements GuestBookService {
         guestBookRepository.save(entry);
     }
 
-    public List<Entry> getTeamEntries(String teamname) {
-        System.out.println(teamname + "in getTeamEntries Impl");
+    public List<Entry> getTeamEntries(String recipient) {
+        System.out.println(recipient + "in getTeamEntries Impl");
 
-        System.out.println(guestBookRepository.findAllByTeam(teamname));
+        System.out.println(guestBookRepository.findAllByRecipient(recipient));
 
-        return guestBookRepository.findAllByTeam(teamname);
+        return guestBookRepository.findAllByRecipient(recipient);
     }
 
 }

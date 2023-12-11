@@ -27,12 +27,12 @@ public class GuestBookController {
         guestBookService.addEntry(entry);
     }
 
-    @GetMapping("/{teamname}")  // HTTP GET 요청을 처리하는 메소드를 나타냅니다.
-    public List<Entry> getTeamEntries(@PathVariable String teamname) {
+    @GetMapping("/{recipient}")  // HTTP GET 요청을 처리하는 메소드를 나타냅니다.
+    public List<Entry> getTeamEntries(@PathVariable String recipient) {
         System.out.println("==getTeamEntries==");
 
-        System.out.println(teamname);
+        System.out.println(recipient);
         // 모든 방명록 항목을 가져와 반환합니다.
-        return guestBookService.getTeamEntries(teamname);
+        return guestBookService.getTeamEntries(recipient);
     }
 }

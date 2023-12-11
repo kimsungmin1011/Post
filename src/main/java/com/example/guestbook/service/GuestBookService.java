@@ -15,7 +15,7 @@ public interface GuestBookService {
      */
     List<Entry> getAllEntries();
 
-    List<Entry> getTeamEntries(String teamname);
+    List<Entry> getTeamEntries(String recipient);
 
 
     /**
